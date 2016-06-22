@@ -61,7 +61,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad() /*This ensures that our view loaded*/
         self.billAmountField.delegate = self /*we select our text field that we want*/
-        self.billAmountField.keyboardType = UIKeyboardType.NumberPad /*We make sure that the keyboard is a numapad*/
+        self.billAmountField.keyboardType = UIKeyboardType.DecimalPad /*We make sure that the keyboard is a numapad*/
         
         self.tipAmountField.userInteractionEnabled = true
         self.tipAmountField.enabled = false
@@ -74,6 +74,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     func dismissKeyboard(){ /*this is a void function*/
         billAmountField.resignFirstResponder() /*This will dismiss our keyboard*/
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return .LightContent
     }
 
     
